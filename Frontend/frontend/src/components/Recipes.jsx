@@ -5,21 +5,24 @@ import axios from "axios";
 
 // import { list } from "../data/Data"; // Assuming this is where your data comes from
 
-// Define the GET request
-axios
-  .get("http://localhost:5000/recipe/view-all-recipes")
-  .then((response) => {
+export const Recipes = () => {
+  const [Recipes, setRecipes] = useState([]);
 
+  // Define the GET request
+  axios
+    .get("http://localhost:5000/recipe/view-all-recipes")
+    .then((response) => {
+      Recipes = response.recipes;
     })
-  .catch((error) => {
-    // Handle errors
-  });
+    .catch((error) => {
+      // Handle errors
+    });
 
   return (
     <>
       <section className="blog-out mb">
         <div className="container recent">
-          <RecentCard cards={filteredList} />
+          <RecentCard cards={Recipes} />
         </div>
       </section>
     </>

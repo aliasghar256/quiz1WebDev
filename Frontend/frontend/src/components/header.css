@@ -1,0 +1,101 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  min-height: 10vh;
+  box-shadow: 0 5px 30px rgb(0 22 84 / 10%);
+  padding: 15px 20px; /* Adjusted padding */
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
+.company-name{
+  font-size: 5px;
+  
+}
+
+header img {
+  width: auto; /* Adjusted for auto width based on the natural image size */
+  max-height: 100%; /* Make sure the image is never taller than the header */
+}
+
+header a {
+  margin-left: 30px;
+  transition: 0.5s;
+  font-weight: 500;
+  color: #323232;
+}
+
+
+header a:hover {
+  color: #27ae60;
+}
+
+header span {
+  width: auto;
+  padding: 0px 6px;
+  background: #27ae60;
+  border-radius: 50px;
+  color: #323232;
+  margin-right: 4px;
+  font-weight: 400;
+}
+
+header h4 {
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+header .toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 15px; /* Uniform padding */
+  }
+
+  header .button {
+    display: none;
+  }
+
+  header .nav .flex, header .nav.small {
+    display: none; /* Ensure this is not displayed */
+  }
+
+  header .toggle {
+    display: block;
+    margin-top: 0; /* Reset margin-top */
+  }
+
+  header .small {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+  header li a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+}
+
+/* Styling for the logo container */
+.logo {
+max-width: 50px; /* Adjust based on your design needs */
+  height: auto; /* Maintains the aspect ratio */
+  display: flex;
+  align-items: center; /* Vertically centers the logo in case the header is taller */
+  justify-content: center; /* Horizontally centers the logo */
+}
+
+.logo img {
+  width: 100%; /* Logo width is now responsive to the size of its container */
+  height: auto; /* Maintains the aspect ratio */
+}

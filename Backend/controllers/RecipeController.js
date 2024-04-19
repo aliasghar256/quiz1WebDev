@@ -55,7 +55,7 @@ const viewRecipes = async (req, res) => {
 const viewAllRecipes = async (req, res) => {
     try {
         const recipes = await Recipe.find()
-        if (recipes) return res.status(200).json({ Message: "Recipes", recipes: recipes })
+        if (recipes) return res.status(200).json({ recipes: recipes })
         else return res.status(404).json({ Message: "Error! No Recipes Found" })
     } catch (error) {
         return res.status(500).json({ message: "Error! " + error.message })

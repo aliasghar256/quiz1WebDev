@@ -2,6 +2,7 @@ import React from "react";
 import { Login } from "./Login";
 import { Register } from "./Register";
 import { useState } from "react";
+import Header from "./Header";
 // import Awards from "./awards/Awards";
 // import Featured from "./featured/Featured";
 // import Hero from "./hero/Hero";
@@ -16,6 +17,7 @@ const Home = () => {
     setCurrentForm(formName);
   };
   return (
+    // <Header>
     <div className="App">
       {currentForm === "Login" ? (
         <Login onFormSwitch={toggleForm} />
@@ -23,6 +25,7 @@ const Home = () => {
         <Register onFormSwitch={toggleForm} />
       )}
     </div>
+    // </Header> */}
   );
 };
 
