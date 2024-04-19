@@ -1,11 +1,12 @@
-const express = require('express')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const User = require('../models/userModel')
+const User = require('../models/UserModel')
+
+const secretKey = 'mySecret'
 
 const signUp = async (req, res) => {
     try {
-        const { email, password } = req.body
+        const { name,email, password } = req.body
         const user = { email, password }
 
         //existing user?
@@ -22,7 +23,7 @@ const signUp = async (req, res) => {
         //Password Hashing
         const hashedPassword = await bcrypt.hash(password, 10)
 
-        const newUser = await User.create({ email: user.email, password: hashedPassword })
+        const newUser = await User.create({ email: user.email, password: hashedPassword, name: name})
         res.status(201).json({ Message: "New User Created", newUser })
     } catch (err) {
         return res.status(500).json({ message: "Error! " + err.message })
