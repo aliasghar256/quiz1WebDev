@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./Home";
 import Recipes from "./Recipes";
+import Header from "./Header";
 
 // import Footer from "../common/footer/Footer";
 // import About from "../about/About";
@@ -16,9 +17,10 @@ const Pages = () => {
   return (
     <>
       <Router>
+        <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Router exact path="/recipes" component={Recipes} />
+          <Route exact path="/recipes" component={Recipes} />
           {/* <Route exact path="/about" component={About} />
           <Route exact path="/services" component={Services} />
           <Route exact path="/blog" component={Blog} />

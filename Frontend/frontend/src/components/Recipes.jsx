@@ -1,28 +1,26 @@
-// Blog.jsx
-import React, { useState, useCallback } from "react";
-import RecentCard from "./RecentCard";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-
-// import { list } from "../data/Data"; // Assuming this is where your data comes from
+import CardComponent from "./RecentCard";
 
 export const Recipes = () => {
-  const [Recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]);
 
-  // Define the GET request
-  axios
-    .get("http://localhost:5000/recipe/view-all-recipes")
-    .then((response) => {
-      Recipes = response.recipes;
-    })
-    .catch((error) => {
-      // Handle errors
-    });
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/recipe/view-all-recipes")
+      .then((response) => {
+        setRecipes(response.data.recipes); // make sure the response structure is correct
+      })
+      .catch((error) => {
+        console.error("Failed to fetch recipes:", error);
+      });
+  }, []); // Empty dependency array to run only once after the component mounts
 
   return (
     <>
       <section className="blog-out mb">
         <div className="container recent">
-          <RecentCard cards={Recipes} />
+          <CardComponent recipes={recipes} />
         </div>
       </section>
     </>

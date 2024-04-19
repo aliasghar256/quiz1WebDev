@@ -17,7 +17,6 @@ const Home = () => {
     setCurrentForm(formName);
   };
   return (
-    // <Header>
     <div className="App">
       {currentForm === "Login" ? (
         <Login onFormSwitch={toggleForm} />
@@ -25,7 +24,6 @@ const Home = () => {
         <Register onFormSwitch={toggleForm} />
       )}
     </div>
-    // </Header> */}
   );
 };
 
