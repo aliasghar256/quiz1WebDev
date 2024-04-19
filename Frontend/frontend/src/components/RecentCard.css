@@ -1,0 +1,92 @@
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Half of 287px */
+    gap: 20px; /* Adjust the gap as necessary */
+  }
+  
+  .card {
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 250px; /* Fixed height */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
+    display: block;
+  }
+  
+  .card-content {
+    padding: 8px; /* Adjust padding if needed */
+    position: relative;
+  }
+  
+  .category-label {
+    display: inline-block;
+    padding: 2px 4px; /* Adjust padding if needed */
+    border-radius: 2px; /* Adjust border radius if needed */
+    font-size: 10px; /* Adjust font size if needed */
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .card-title {
+    margin: 0;
+    color: #333;
+    font-size: 14px; /* Adjust font size if needed */
+    font-weight: bold;
+  }
+  
+  .card-info {
+    margin: 4px 0;
+    font-size: 10px; /* Adjust font size if needed */
+    color: #666;
+  }
+  
+  .card-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px; /* Adjust margin if needed */
+  }
+  .starting-from{
+    font-size: 10px;
+    color: black;
+  }
+  .btn {
+    background-color: #323232;
+    color: white;
+    border: none;
+    padding: 4px 8px; /* Adjust padding if needed */
+    border-radius: 2px; /* Adjust border radius if needed */
+    cursor: pointer;
+    font-size: 10px; /* Adjust font size if needed */
+  }
+  
+  .price {
+    font-size: 16px; /* Adjust font size if needed */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card-type {
+    font-size: 12px; /* Adjust font size if needed */
+    font-family: 'Arial', sans-serif;
+    color: #666;
+    margin-top: 2px;
+    position: absolute; /* Position `card-type` absolutely relative to `card-content` */
+    position: absolute; /* Position `card-type` absolutely relative to `card-content` */
+    right:0px;
+    top: -5px;
+    background: rgba(255, 255, 255, 0.9); /* Optional: add a semi-transparent background */
+    padding: 3px 7px; /* Small padding for visual appeal */
+    margin-top: -20px;
+  }
+  
